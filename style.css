@@ -24,7 +24,15 @@ body {
     align-items: center;
 }
 
-#status, #taskList {
+.header-buttons button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+#status, #taskList, #location {
     padding: 10px;
 }
 

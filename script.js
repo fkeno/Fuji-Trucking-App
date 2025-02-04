@@ -1,6 +1,9 @@
 const API_BASE_URL = "https://tycoon-2epova.users.cfx.re/status"; // Change if necessary
 let apiKey = localStorage.getItem("tycoonApiKey");
 let userData = {};
+let recipes = [];
+let locations = [];
+let vehicles = {};
 
 window.addEventListener("message", (event) => {
     if (event.data.type === "userData") {
@@ -47,7 +50,7 @@ function fetchPlayerDetails() {
 
 function startPositionUpdates() {
     setInterval(() => {
-        document.getElementById("status").innerText += ` - Position: (${userData.pos_x}, ${userData.pos_y}, ${userData.pos_z})`;
+        document.getElementById("location").innerText = `Position: (${userData.pos_x}, ${userData.pos_y}, ${userData.pos_z})`;
     }, 1000);
 }
 
@@ -120,5 +123,40 @@ function resizeElement(elmnt) {
     function stopResize() {
         document.documentElement.removeEventListener("mousemove", doResize);
         document.documentElement.removeEventListener("mouseup", stopResize);
+    }
+}
+
+// Load JSON data
+fetch('recipes.json')
+    .then(response => response.json())
+    .then(data => recipes = data);
+
+fetch('locations.json')
+    .then(response => response.json())
+    .then(data => locations = data);
+
+fetch('vehicles.json')
+    .then(response => response.json())
+    .then(data => vehicles = data);
+
+document.getElementById("settingsButton").addEventListener("click", openSettings);
+document.getElementById("playButton").addEventListener("click", startManufacturing);
+document.getElementById("stopButton").addEventListener("click", stopManufacturing);
+
+function openSettings() {
+    alert("Settings page will be implemented here.");
+}
+
+function startManufacturing() {
+    let item = prompt("Enter the item you want to manufacture:");
+    if (item) {
+        // Check cache for progress or start new process
+        alert(`Starting manufacturing process for ${item}`);
+    }
+}
+
+function stopManufacturing() {
+    if (confirm("Are you sure you want to stop the current manufacturing process?")) {
+        alert("Manufacturing process stopped.");
     }
 }

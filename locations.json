@@ -1,0 +1,10 @@
+[
+    {
+        "name": "Location1",
+        "coordinates": {"x": 100, "y": 200, "z": 300}
+    },
+    {
+        "name": "Location2",
+        "coordinates": {"x": 400, "y": 500, "z": 600}
+    }
+]

@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Item1",
+        "materials": ["Material1", "Material2"],
+        "location": "Location1",
+        "cost": 100
+    },
+    {
+        "name": "Item2",
+        "materials": ["Material3", "Material4"],
+        "location": "Location2",
+        "cost": 200
+    }
+]

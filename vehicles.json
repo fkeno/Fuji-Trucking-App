@@ -1,0 +1,12 @@
+[
+    {
+        "category": "cab",
+        "name": "Cab1",
+        "trunkSize": 100
+    },
+    {
+        "category": "trailer",
+        "name": "Trailer1",
+        "trunkSize": 200
+    }
+]

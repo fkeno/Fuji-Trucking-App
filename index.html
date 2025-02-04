@@ -10,12 +10,18 @@
     <div id="app" class="window">
         <div class="window-header" id="windowHeader">
             <h1>Fujis Trucking Tool</h1>
-            <button onclick="requestAPIKey()">Enter API Key</button>
+            <div class="header-buttons">
+                <button id="settingsButton"><i class="fas fa-cog"></i></button>
+                <button id="playButton"><i class="fas fa-play"></i></button>
+                <button id="stopButton"><i class="fas fa-stop"></i></button>
+            </div>
         </div>
         <div id="status"></div>
         <div id="taskList"></div>
+        <div id="location"></div>
         <div class="resize-handle" id="resizeHandle"></div>
     </div>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="script.js"></script>
     <script>
         window.postMessage({ type: "getData" }, "*");
