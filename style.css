@@ -11,6 +11,7 @@ body {
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     overflow: hidden;
+    resize: both;
 }
 
 .window-header {
@@ -25,4 +26,14 @@ body {
 
 #status, #taskList {
     padding: 10px;
+}
+
+.resize-handle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #000;
+    bottom: 0;
+    right: 0;
+    cursor: se-resize;
 }

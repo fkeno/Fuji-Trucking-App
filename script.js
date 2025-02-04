@@ -93,3 +93,32 @@ function dragElement(elmnt) {
         document.onmousemove = null;
     }
 }
+
+// Resizing functionality
+resizeElement(document.getElementById("app"));
+
+function resizeElement(elmnt) {
+    const resizeHandle = document.getElementById("resizeHandle");
+    let startX, startY, startWidth, startHeight;
+
+    resizeHandle.addEventListener("mousedown", initResize);
+
+    function initResize(e) {
+        startX = e.clientX;
+        startY = e.clientY;
+        startWidth = parseInt(document.defaultView.getComputedStyle(elmnt).width, 10);
+        startHeight = parseInt(document.defaultView.getComputedStyle(elmnt).height, 10);
+        document.documentElement.addEventListener("mousemove", doResize);
+        document.documentElement.addEventListener("mouseup", stopResize);
+    }
+
+    function doResize(e) {
+        elmnt.style.width = (startWidth + e.clientX - startX) + "px";
+        elmnt.style.height = (startHeight + e.clientY - startY) + "px";
+    }
+
+    function stopResize() {
+        document.documentElement.removeEventListener("mousemove", doResize);
+        document.documentElement.removeEventListener("mouseup", stopResize);
+    }
+}
