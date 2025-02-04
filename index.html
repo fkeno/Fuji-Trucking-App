@@ -7,12 +7,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Transport Tycoon - Trucking Task Tracker</h1>
-    <div id="app">
-        <button onclick="requestAPIKey()">Enter API Key</button>
+    <div id="app" class="window">
+        <div class="window-header" id="windowHeader">
+            <h1>Transport Tycoon - Trucking Task Tracker</h1>
+            <button onclick="requestAPIKey()">Enter API Key</button>
+        </div>
         <div id="status"></div>
         <div id="taskList"></div>
     </div>
     <script src="script.js"></script>
+    <script>
+        window.postMessage({ type: "getData" }, "*");
+    </script>
 </body>
 </html>

@@ -1,0 +1,28 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.window {
+    position: absolute;
+    width: 400px;
+    height: 300px;
+    border: 1px solid #000;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+.window-header {
+    background-color: #f1f1f1;
+    padding: 10px;
+    cursor: move;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#status, #taskList {
+    padding: 10px;
+}
