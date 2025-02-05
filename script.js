@@ -1,5 +1,4 @@
 const API_BASE_URL = "https://tycoon-2epova.users.cfx.re/status"; // Change if necessary
-let apiKey = localStorage.getItem("tycoonApiKey");
 let userData = {};
 let recipes = [];
 let locations = [];
@@ -139,6 +138,7 @@ fetch('vehicles.json')
     .then(response => response.json())
     .then(data => vehicles = data);
 
+// Button functionality
 document.getElementById("settingsButton").addEventListener("click", openSettings);
 document.getElementById("playButton").addEventListener("click", startManufacturing);
 document.getElementById("stopButton").addEventListener("click", stopManufacturing);
